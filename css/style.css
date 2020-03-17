@@ -124,8 +124,8 @@ nav ul li a{
     grid-row: 1 / span 1;
     padding-top: 10px;
     background-color: transparent;
-    width: 250px;
-    height: 250px;
+    width: 350px;
+    height: 350px;
 }
   
   #headshots {
@@ -162,6 +162,8 @@ nav ul li a{
 
 #headshot1 img, #headshot2 img{
     border-radius: 50%;
+    height: auto;  
+    width: 350px;
 }
 
 
@@ -324,17 +326,16 @@ nav ul li a{
     grid-column: 2 / span 2;
 }
 
-    .content {
-        grid-row: 6 / span 1;
-        grid-column: 1 / -1;
-        justify-self: center;
+.content {
+    grid-row: 6 / span 1;
+    grid-column: 1 / -1;
+    justify-self: center;
 
-        height: 160px;
-        overflow: hidden;
-        font-family: 'Lato', sans-serif;
-        font-size: 35px;
-        line-height: 40px;
-        color: #6b6b6b;
+    height: 160px;
+    overflow: hidden;
+    font-size: 35px;
+    line-height: 40px;
+    color: #6b6b6b;
       }
       .content__container {
         font-weight: 600;
