@@ -271,7 +271,7 @@ nav ul li a{
 
 .proj-description{
     grid-row: 2 / span 1;
-    padding-left: 20px;
+    padding-left: 25px;
     align-self: center;
 }
 
@@ -280,8 +280,7 @@ nav ul li a{
     grid-row: 3 / span 1;
     align-self: center;
     justify-self: center;
-    padding-top: 10px;
-    padding-bottom: 10px;
+    padding: 15px 30px 15px 30px;
 }
 
 .project-image img{
@@ -300,9 +299,8 @@ nav ul li a{
 #courses-intro{
     grid-row: 1 / span 1;
     grid-column: 1 / -1;
-    padding-top: 10px;
+    padding: 10px;
     font-style: italic;
-    text-align: center;
 }
 
 
@@ -326,12 +324,15 @@ nav ul li a{
     grid-column: 2 / span 2;
 }
 
+/* source: https://codepen.io/yoannhel/pen/sJpDj */
 .content {
     grid-row: 6 / span 1;
     grid-column: 1 / -1;
+    padding-top: 40px;
     justify-self: center;
     height: 160px;
     overflow: hidden;
+    font-size: 25px;
     line-height: 40px;
     color: #006666;
 
@@ -346,7 +347,7 @@ nav ul li a{
 
 .content__container__list {
     margin-top: 0;
-    padding-left: 400px;
+    padding-left: 300px;
     list-style: none;
     -webkit-animation-name: change;
     -webkit-animation-duration: 10s;
@@ -711,6 +712,31 @@ footer{
         grid-column: 2 / span 1;
     }
 
+    #stryker, #trinity, #bdsi, #umtri{
+        grid-template-rows: auto auto auto;
+        grid-template-columns: 1fr;
+    }
+
+    
+    .project-title{
+        grid-row: 1 / span 1;
+        grid-column: 1 / -1;
+    }
+    
+    
+    .proj-description{
+        grid-row: 2 / span 1;
+        grid-column: 1 / -1;
+    }
+    
+    
+    .project-image{
+        grid-row: 3 / span 1;
+        grid-column: 1 / -1;
+    }
+    
+
+
 
     .courses{
         grid-template-rows: 0.25fr 1fr 1fr;
@@ -734,9 +760,6 @@ footer{
     }
 
     
-
-
-   
 }
  
 @media screen and (prefers-reduced-motion: reduce){
@@ -744,6 +767,7 @@ footer{
     * {
     animation-duration: 0s;
     transition: none;
-    scroll-behavior: auto;;
+    scroll-behavior: auto;
 
+}
 }
