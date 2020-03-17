@@ -20,7 +20,7 @@ header{
 }
 
 header h1{
-    font-size: 72px;
+    font-size: 60px;
     font-family: 'Amatic SC', cursive;
 }
 
@@ -184,6 +184,7 @@ nav ul li a{
 
 #education, #skills, #contact-form {
     margin: 10px;
+    padding: 5px;
     text-align: center;
     border: 5px solid #6b6b6b;
     color: #6b6b6b;
@@ -272,6 +273,7 @@ nav ul li a{
 .proj-description{
     grid-row: 2 / span 1;
     padding-left: 25px;
+    padding-right: 5px;
     align-self: center;
 }
 
@@ -347,7 +349,7 @@ nav ul li a{
 
 .content__container__list {
     margin-top: 0;
-    padding-left: 300px;
+    padding-left: 200px;
     list-style: none;
     -webkit-animation-name: change;
     -webkit-animation-duration: 10s;
@@ -561,6 +563,7 @@ footer{
     grid-row-gap: 10px;
     color: #fff5bb;
     justify-items: center;
+    font-size: 18px;
 }
 
 .footer-nav{
