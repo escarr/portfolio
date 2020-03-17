@@ -3,6 +3,7 @@ body{
     background-image: url("../images/new_year_background.png");
     font-family: 'Lucida Sans', sans-serif;
     line-height: 1.2;
+    font-size: 20px;
 }
 
 *:focus{
@@ -19,7 +20,7 @@ header{
 }
 
 header h1{
-    font-size: 60px;
+    font-size: 72px;
     font-family: 'Amatic SC', cursive;
 }
 
