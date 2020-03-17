@@ -1,7 +1,9 @@
 body{
-    margin-bottom: 100px;
+    margin-bottom: 150px;
     background-image: url("../images/new_year_background.png");
     font-family: 'Lucida Sans', sans-serif;
+    line-height: 1.5;
+    font-size: 20px;
 }
 
 *:focus{
@@ -9,12 +11,12 @@ body{
 }
 
 header{
-    padding: 10px;
     display: flex;
     flex-direction: column;
     align-items: center;
     background-color: #6b6b6b;
     color: #fff5bb;
+    padding: 10px;
 }
 
 header h1{
@@ -22,7 +24,7 @@ header h1{
     font-family: 'Amatic SC', cursive;
 }
 
-/* https://css-tricks.com/snippets/css/typewriter-effect/ */
+/* source: https://css-tricks.com/snippets/css/typewriter-effect/ */
 header h1 {
     overflow: hidden; /* Ensures the content is not revealed until the animation */
     border-right: .15em solid transparent; /* The typwriter cursor */
@@ -46,10 +48,11 @@ header h1 {
     50% { border-color:#fff5bb; }
   }
 
+
 nav ul{
-    padding-top: 10px;
     display: flex;
     flex-direction: column;
+    padding-top: 10px;
 }
 
 nav ul li{
@@ -115,7 +118,7 @@ nav ul li a{
     grid-row-gap: 10px;
 }
 
-/* https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_flip_card */
+/* source: https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_flip_card */
 
 .flip-card{
     grid-row: 1 / span 1;
@@ -183,8 +186,8 @@ nav ul li a{
     border: 5px solid #6b6b6b;
     color: #6b6b6b;
     background-color: #fff5bb;
-    width: 300px;
-    height: 300px;
+    width: 350px;
+    height: 350px;
     display: flex;
     flex-direction: column;
     justify-content: center;
