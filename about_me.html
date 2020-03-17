@@ -4,20 +4,33 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Amatic+SC&display=swap" rel="stylesheet">
+    <script type="text/javascript" src="js/sounds.js"></script>
     <link rel="stylesheet" type="text/css" href="css/html5reset.css">
     <link rel="stylesheet" type="text/css" href="css/style.css">
     <title>Emmi Carr: About Me</title>
   </head>
+
+    <audio><source src="sounds/bark.mp3" /></audio>
+    <audio><source src="sounds/bark3.mp3" /></audio>
+    <audio><source src="sounds/dogbark2.mp3" /></audio>
+    <audio><source src="sounds/dogbark5.mp3" /></audio>
+    <audio><source src="sounds/pup1.mp3" /></audio>
+    <audio> <source src="sounds/pup2.mp3" /></audio>
+    <audio><source src="sounds/pup4.mp3" /></audio>
+    <audio> <source src="sounds/pup5.mp3" /></audio>
+    <audio> <source src="sounds/pup6.mp3" /></audio>
+
   <body>
     <div class="skip"><a href="#main">Skip to Main Content</a></div>
     <header>
-    <h1>Emmi Carr's Portfolio</h1>
+    <h1>ERMIONI CARR</h1>
       <nav>
           <ul>
-            <li><a href = "index.html">Overview </a></li>
-            <li><a href = "projects.html">Projects </a></li>
-            <li><a href = "courses.html">Courses </a></li>
-            <li id="currentLink"><a href = "about_me.html">About Me </a></li>
+            <li><a href = "index.html">Overview</a></li>
+            <li><a href = "projects.html">Projects</a></li>
+            <li><a href = "courses.html">Courses</a></li>
+            <li id="currentLink"><a href = "about_me.html">About Me</a></li>
           </ul>
     </nav>
   </header>
@@ -32,27 +45,34 @@
 
 
     <div id="hobbies">
+    <div id="hobbies-desc">
     <h2>My Hobbies</h2>
       <h3>Running</h3>
           <p>In fall 2019, I decided to run my very first half marathon! It was something that I had always wanted to do!</p>
     <h3>Crossfit</h3>
           <p>As I have always loved sports and competition, I was naturally drawn to CrossFit and have not been able to turn back since!</p>
     <h3>Cooking & Baking</h3>
-          <p>In order to keep things interesting, I am always trying to make new recipes! Some of my current favorite recipes include buffalo cauliflower mac and cheese and lemon poppyseed muffins. </p></div> 
+          <p>In order to keep things interesting, I am always trying to make new recipes! Some of my current favorite recipes include buffalo cauliflower mac and cheese and lemon poppyseed muffins. </p>
+    </div> 
+
+    <div id='half-marathon'>
+      <img src="images/half_marathon.jpg" alt=""/>
+    </div> 
+  </div> 
 
     <div id="dogs">
-    <h2 id = "gallery">And Of Course, Dog Photos!</h2>
-      <p>As I am obsessed with my dogs (and any dogs really), it would be a shame to not include some of my favorite photos!</p>
+    <h2>And Of Course, Dog Photos!</h2>
+      <p>As I am obsessed with my dogs (and any dogs really), it would be a shame to not include some of my favorite photos! Click images for sound! </p>
     <div class="gallery"> 
-      <img id="brody1" src="images/dog_brody.jpg" alt="" />
-      <img id="koukla1" src="images/dog_koukla.jpg" alt="" />
-      <img id="gracie1" src="images/dog_gracie.jpg" alt="" />
-      <img id="leo1" src="images/dog_leo.jpg" alt="" />
-      <img id="leo_and_koukla" src="images/leo_and_koukla.png" alt="" />
-      <img id="leo2" src="images/dog_leo2.jpg" alt="" />
-      <img id="gracie2" src="images/dog_gracie2.jpg" alt="" />
-      <img id="koukla2" src="images/dog_koukla2.jpg" alt="" />
-      <img id="brody2" src="images/dog_brody2.jpg" alt="" />
+      <img id="brody1" onclick="playclip(0);" src="images/dog_brody.jpg" alt="" /></a>
+      <img id="koukla1" onclick="playclip(1);" src="images/dog_koukla.jpg" alt="" />
+      <img id="gracie1" onclick="playclip(2);" src="images/dog_gracie.jpg" alt="" />
+      <img id="leo1" onclick="playclip(3);" src="images/dog_leo.jpg" alt="" />
+      <img id="leo_and_koukla" onclick="playclip(4);" src="images/leo_and_koukla.png" alt="" />
+      <img id="leo2" onclick="playclip(5);" src="images/dog_leo2.jpg" alt="" />
+      <img id="gracie2" onclick="playclip(6);" src="images/dog_gracie2.jpg" alt="" />
+      <img id="koukla2" onclick="playclip(7);" src="images/dog_koukla2.jpg" alt="" />
+      <img id="brody2" onclick="playclip(8);" src="images/dog_brody2.jpg" alt="" />
     </div></div>
 
     <footer>
