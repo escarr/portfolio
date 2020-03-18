@@ -138,13 +138,10 @@ nav ul li a{
   }
   
   /* Do an horizontal flip when you move the mouse over the flip box container */
-  .flip-card:hover #headshots{
+  .flip-card:hover #headshots,  .flip-card:focus #headshots{
     transform: rotateY(180deg);
   }
 
-  .flip-card:focus #headshots{
-    transform: rotateY(180deg);
-  }
 
 
 #headshot1, #headshot2 {
@@ -546,7 +543,7 @@ nav ul li a{
     border: 10px solid #9dbcbc;
   }
 
-.gallery > img:hover{
+.gallery > img:hover, .gallery > img:focus{
     border-radius: 50%;
 }
 
@@ -677,7 +674,6 @@ footer{
     header{
         flex-direction: row;
         justify-content: space-between;
-        
     }
 
 
@@ -738,9 +734,6 @@ footer{
         grid-column: 1 / -1;
     }
     
-
-
-
     .courses{
         grid-template-rows: 0.25fr 1fr 1fr;
         grid-template-columns: 1fr 1fr;
@@ -767,10 +760,35 @@ footer{
  
 @media screen and (prefers-reduced-motion: reduce){
 
-    * {
-    animation-duration: 0s;
-    transition: none;
-    scroll-behavior: auto;
+    header h1{
+        animation: none;
+    }
+  
+    .skip a, #headshots{
+      transition: none;
+    }
 
-}
+    .content__container__list{
+        animation: none;
+        overflow: visible;
+        list-style-type: disc;
+        padding-left: 75px;
+        
+    }
+
+    .content {
+        height: 200px;
+    
+    }
+
+    
+    
+    .content__container {
+        overflow: visible; 
+        height: 40px;
+        padding: 0 40px;
+    }
+    
+ 
+
 }
