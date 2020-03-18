@@ -1,3 +1,9 @@
+/* prefixed by https://autoprefixer.github.io (PostCSS: v7.0.26, autoprefixer: v9.7.3) */
+
+/* source for color palette: https://www.color-hex.com/color-palette/47627 */
+
+/* source for background image: This pattern is downloaded from www.subtlepatterns.com */
+
 body{
     margin-bottom: 150px;
     background-image: url("../images/new_year_background.png");
@@ -11,9 +17,16 @@ body{
 }
 
 header{
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-direction: column;
-    align-items: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
     background-color: #6b6b6b;
     color: #fff5bb;
     padding: 10px;
@@ -24,25 +37,37 @@ header h1{
     font-family: 'Amatic SC', cursive;
 }
 
-/* source: https://css-tricks.com/snippets/css/typewriter-effect/ */
+/* source for animation: https://css-tricks.com/snippets/css/typewriter-effect/ */
+
 header h1 {
     overflow: hidden; /* Ensures the content is not revealed until the animation */
     border-right: .15em solid transparent; /* The typwriter cursor */
     white-space: nowrap; /* Keeps the content on a single line */
     margin: 0 auto; /* Gives that scrolling effect as the typing happens */
     letter-spacing: .15em; /* Adjust as needed */
-    animation: 
+    -webkit-animation: 
+      typing 4.0s steps(25, end),
+      blink-caret .75s step-end 4;
+            animation: 
       typing 4.0s steps(25, end),
       blink-caret .75s step-end 4;
   }
   
   /* The typing effect */
+  @-webkit-keyframes typing {
+    from { max-width: 0% }
+    to { max-width: 100% }
+  }
   @keyframes typing {
     from { max-width: 0% }
     to { max-width: 100% }
   }
   
   /* The typewriter cursor effect */
+  @-webkit-keyframes blink-caret {
+    from, to { border-color: transparent }
+    50% { border-color:#fff5bb; }
+  }
   @keyframes blink-caret {
     from, to { border-color: transparent }
     50% { border-color:#fff5bb; }
@@ -50,8 +75,13 @@ header h1 {
 
 
 nav ul{
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-direction: column;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
     padding-top: 10px;
 }
 
@@ -71,8 +101,8 @@ nav ul li a{
 }
 
 /* source: https://www.w3schools.com/howto/howto_css_circles.asp */
-#currentLink::before{
-    position: relative;
+
+#currentLink::before, #currentLink::after{
     content: "";
     display: inline-block;
     /* By using an em scale, the arrows will size with the font */
@@ -80,21 +110,15 @@ nav ul li a{
     height: 0.4em;
     border-radius: 50%;
     background-color: #fff5bb;
-    margin-right: 0.25em;
     margin-bottom: 0.1em;
 }
 
+#currentLink::before{
+    margin-right: 0.25em;
+}
+
 #currentLink::after{
-    position: relative;
-    content: "";
-    display: inline-block;
-    /* By using an em scale, the arrows will size with the font */
-    width: 0.4em;
-    height: 0.4em;
-    border-radius: 50%;
-    background-color: #fff5bb;
     margin-left: 0.25em;
-    margin-bottom: 0.1em;
 }
 
 .skip a{
@@ -102,6 +126,8 @@ nav ul li a{
     top: -40px;
     background-color: #6b6b6b;
     color: white;
+    -webkit-transition: top 1s ease-out;
+    -o-transition: top 1s ease-out;
     transition: top 1s ease-out;
 }   
 
@@ -110,17 +136,24 @@ nav ul li a{
 }
 
 .homepage{
+    display: -ms-grid;
     display: grid;
+    -ms-grid-rows: 0.25fr 10px 0.25fr 10px 1fr;
     grid-template-rows: 0.25fr 0.25fr 1fr;
+    -ms-grid-columns: 1fr;
     grid-template-columns: 1fr;
-    align-items: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
     justify-items: center;
     grid-row-gap: 10px;
 }
 
-/* source: https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_flip_card */
+/* source for flip card help: https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_flip_card */
 
 .flip-card{
+    -ms-grid-row: 1;
+    -ms-grid-row-span: 1;
     grid-row: 1 / span 1;
     padding-top: 10px;
     background-color: transparent;
@@ -129,33 +162,31 @@ nav ul li a{
 }
   
   #headshots {
-    position: relative;
-    width: 100%;
-    height: 100%;
-    text-align: center;
+    -webkit-transition: -webkit-transform 0.8s;
+    transition: -webkit-transform 0.8s;
+    -o-transition: transform 0.8s;
     transition: transform 0.8s;
-    transform-style: preserve-3d;
+    transition: transform 0.8s, -webkit-transform 0.8s;
+    -webkit-transform-style: preserve-3d;
+            transform-style: preserve-3d;
   }
   
   /* Do an horizontal flip when you move the mouse over the flip box container */
   .flip-card:hover #headshots,  .flip-card:focus #headshots{
-    transform: rotateY(180deg);
+    -webkit-transform: rotateY(180deg);
+            transform: rotateY(180deg);
   }
-
-
 
 #headshot1, #headshot2 {
     position: absolute;
-    width: 100%;
-    height: 100%;
     -webkit-backface-visibility: hidden;
     backface-visibility: hidden;
   }
 
 #headshot2{
-    transform: rotateY(180deg);
+    -webkit-transform: rotateY(180deg);
+            transform: rotateY(180deg);
 }
-  
 
 #headshot1 img, #headshot2 img{
     border-radius: 50%;
@@ -163,20 +194,31 @@ nav ul li a{
     width: 350px;
 }
 
-
 #biography{
+    -ms-grid-row: 2;
+    -ms-grid-row-span: 1;
     grid-row: 2 / span 1;
-    grid-column: 1 / span 1;
     text-align: center;
     padding: 10px;
 }
 
 #box-elements{
+    -ms-grid-row: 3;
+    -ms-grid-row-span: 1;
     grid-row: 3 / span 1;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
 }
 
 #education, #skills, #contact-form {
@@ -188,10 +230,19 @@ nav ul li a{
     background-color: #fff5bb;
     width: 350px;
     height: 350px;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
 }
 
 #education:hover, #skills:hover, #contact-form:hover{
@@ -211,7 +262,6 @@ nav ul li a{
 }
 
 #education h2, #skills h2, #contact-form h2 {
-    font-size: 20px;
     padding-bottom: 10px;
 }
 
@@ -221,32 +271,45 @@ nav ul li a{
 
 
 .projects{
+    display: -ms-grid;
     display: grid;
+    -ms-grid-rows: auto auto auto auto;
     grid-template-rows: auto auto auto auto;
+    -ms-grid-columns: 1fr;
     grid-template-columns: 1fr;
 }
 
-
 #stryker{
+    -ms-grid-row: 1;
+    -ms-grid-row-span: 1;
     grid-row: 1 / span 1;
 }
 
 #trinity{
+    -ms-grid-row: 2;
+    -ms-grid-row-span: 1;
     grid-row: 2 / span 1;
 }
 
 #bdsi{
+    -ms-grid-row: 3;
+    -ms-grid-row-span: 1;
     grid-row: 3 / span 1;
 }
 
 #umtri{
+    -ms-grid-row: 4;
+    -ms-grid-row-span: 1;
     grid-row: 4 / span 1;
 }
 
 #stryker, #trinity, #bdsi, #umtri{
     padding-top: 10px;
+    display: -ms-grid;
     display: grid;
+    -ms-grid-rows: auto auto auto;
     grid-template-rows: auto auto auto;
+    -ms-grid-columns: 1fr;
     grid-template-columns: 1fr;
 }
 
@@ -258,6 +321,8 @@ nav ul li a{
     font-size: 32px;
     padding-bottom: 5px;
     text-align: center;
+    -ms-grid-row: 1;
+    -ms-grid-row-span: 1;
     grid-row: 1 / span 1;
 }
 
@@ -268,34 +333,43 @@ nav ul li a{
 }
 
 .proj-description{
+    -ms-grid-row: 2;
+    -ms-grid-row-span: 1;
     grid-row: 2 / span 1;
     padding-left: 25px;
     padding-right: 5px;
-    align-self: center;
 }
 
 
 .project-image{
+    -ms-grid-row: 3;
+    -ms-grid-row-span: 1;
     grid-row: 3 / span 1;
-    align-self: center;
-    justify-self: center;
+    -ms-grid-row-align: center;
+        align-self: center;
+    -ms-grid-column-align: center;
+        justify-self: center;
     padding: 15px 30px 15px 30px;
 }
 
 .project-image img{
-   display: inline-block;
    width: 100%;
    height: auto;
 }
 
 
 .courses{
+    display: -ms-grid;
     display: grid;
+    -ms-grid-rows: 0.25fr 1fr 1fr 1fr 1fr 0.5fr;
     grid-template-rows: 0.25fr 1fr 1fr 1fr 1fr 0.5fr;
+    -ms-grid-columns: 0.5fr 1fr 0.5fr;
     grid-template-columns: 0.5fr 1fr 0.5fr;
 }
 
 #courses-intro{
+    -ms-grid-row: 1;
+    -ms-grid-row-span: 1;
     grid-row: 1 / span 1;
     grid-column: 1 / -1;
     padding: 10px;
@@ -304,37 +378,56 @@ nav ul li a{
 
 
 #si618{
+    -ms-grid-row: 2;
+    -ms-grid-row-span: 1;
     grid-row: 2 / span 1;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 2;
     grid-column: 1 / span 2;
 }
 
 #lhs712{
+    -ms-grid-row: 3;
+    -ms-grid-row-span: 1;
     grid-row: 3 / span 1;
+    -ms-grid-column: 2;
+    -ms-grid-column-span: 2;
     grid-column: 2 / span 2;
 }
 
 #si507{
+    -ms-grid-row: 4;
+    -ms-grid-row-span: 1;
     grid-row: 4 / span 1;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 2;
     grid-column: 1 / span 2;
 }
 
 #si539{
+    -ms-grid-row: 5;
+    -ms-grid-row-span: 1;
     grid-row: 5 / span 1;
+    -ms-grid-column: 2;
+    -ms-grid-column-span: 2;
     grid-column: 2 / span 2;
 }
 
-/* source: https://codepen.io/yoannhel/pen/sJpDj */
+/* source for text animation: https://codepen.io/yoannhel/pen/sJpDj */
+
 .content {
+    -ms-grid-row: 6;
+    -ms-grid-row-span: 1;
     grid-row: 6 / span 1;
     grid-column: 1 / -1;
     padding-top: 40px;
-    justify-self: center;
+    -ms-grid-column-align: center;
+        justify-self: center;
     height: 160px;
     overflow: hidden;
     font-size: 25px;
     line-height: 40px;
     color: #006666;
-
 }
 
 .content__container {
@@ -441,30 +534,54 @@ nav ul li a{
     border: 5px solid #6b6b6b;
     color: #6b6b6b;
     background-color: #fff5bb;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
 }
 
 .about{
+    display: -ms-grid;
     display: grid;
+    -ms-grid-rows: 0.05fr 10px 1fr 10px 0.25fr 10px 1fr;
     grid-template-rows: 0.05fr 1fr 0.25fr 1fr;
+    -ms-grid-columns: 1fr;
     grid-template-columns: 1fr;
     grid-row-gap: 10px;
 }
 
+
 #about-intro{
     padding: 10px;
+    -ms-grid-row: 1;
+    -ms-grid-row-span: 1;
     grid-row: 1 / span 1;
     font-style: italic;
 }
 
 #fav-trip{
+    -ms-grid-row: 2;
+    -ms-grid-row-span: 1;
     grid-row: 2 / span 1;
+    display: -ms-grid;
     display: grid;
+    -ms-grid-rows: 1fr 0.25fr 1fr;
     grid-template-rows: 1fr 0.25fr 1fr;
+    -ms-grid-columns: 1fr;
     grid-template-columns: 1fr;
+    color: white;
+    font-size: 24px;
+    text-align: center;
+    
     background-color: black;
     background-image: url("../images/elephant.jpg");
     /* Create the parallax scrolling effect */
@@ -472,52 +589,62 @@ nav ul li a{
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    color: white;
-    font-size: 24px;
-    text-align: center;
 }
 
 #fav-trip h2{
     padding-top: 20px;
+    -ms-grid-row: 1;
+    -ms-grid-row-span: 1;
     grid-row: 1 / span 1;
 }
 
 #fav-trip p{
+    -ms-grid-row: 2;
+    -ms-grid-row-span: 1;
     grid-row: 2 / span 1;
 }
 
 #hobbies{
+    -ms-grid-row: 3;
+    -ms-grid-row-span: 1;
     grid-row: 3 / span 1;
+    display: -ms-grid;
     display: grid;
+    -ms-grid-rows: 1fr 1fr;
     grid-template-rows: 1fr 1fr;
+    -ms-grid-columns: 1fr;
     grid-template-columns: 1fr;
     justify-items: center;
-    align-items: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
 }
 
 #hobbies-desc{
+    -ms-grid-row: 1;
+    -ms-grid-row-span: 1;
     grid-row: 1 / span 1;
     padding: 5px;
 }
 
-
 #half-marathon{
+    -ms-grid-row: 2;
+    -ms-grid-row-span: 1;
     grid-row: 2 / span 1;
 }
-
 
 #hobbies-desc h2{
     text-align: center;
     font-size: 24px;
 }
 
-
 #hobbies-desc h3{
-    font-size: 20px;
     padding-top: 5px;
 }
 
 #dogs{
+    -ms-grid-row: 4;
+    -ms-grid-row-span: 1;
     grid-row: 4 / span 1;
 }
 
@@ -527,11 +654,21 @@ nav ul li a{
 }
 
 .gallery{
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
 }
 
 .gallery > img:nth-of-type(odd){
@@ -548,14 +685,17 @@ nav ul li a{
 }
 
 footer{
-    position:fixed;
-    left:0px;
-    bottom:0px;
-    width:100%;
+    position: fixed;
+    left: 0px;
+    bottom: 0px;
+    width: 100%;
     min-height: 50px;
     background-color: #6b6b6b;
+    display: -ms-grid;
     display: grid;
+    -ms-grid-rows: auto 10px auto;
     grid-template-rows: auto auto;
+    -ms-grid-columns: auto;
     grid-template-columns: auto;
     grid-row-gap: 10px;
     color: #fff5bb;
@@ -564,6 +704,8 @@ footer{
 }
 
 .footer-nav{
+    -ms-grid-row: 1;
+    -ms-grid-row-span: 1;
     grid-row: 1 / span 1;
 }
 
@@ -578,6 +720,8 @@ footer{
 }
 
 .contact-info{
+    -ms-grid-row: 2;
+    -ms-grid-row-span: 1;
     grid-row: 2 / span 1;
 }
 
@@ -588,7 +732,9 @@ footer{
 .form-entry{
     padding-top: 10px;
     padding-bottom: 10px;
+    display: -ms-grid;
     display: grid;
+    -ms-grid-columns: auto 10px 1fr;
     grid-template-columns: auto 1fr;
     grid-row-gap: 5px;
     grid-column-gap: 10px;
@@ -596,11 +742,13 @@ footer{
  }
 
 
-
 @media screen and (min-width: 800px){
 
     nav ul{
-        flex-direction: row;
+        -webkit-box-orient: horizontal;
+        -webkit-box-direction: normal;
+            -ms-flex-direction: row;
+                flex-direction: row;
     }
 
     nav ul li{
@@ -608,32 +756,54 @@ footer{
     }
 
     .homepage{
+        -ms-grid-rows: auto auto;
         grid-template-rows: auto auto;
+        -ms-grid-columns: 1fr 1fr 1fr;
         grid-template-columns: 1fr 1fr 1fr;
     }
 
     .flip-card{
+        -ms-grid-row: 1;
+        -ms-grid-row-span: 1;
         grid-row: 1 / span 1;
+        -ms-grid-column: 1;
+        -ms-grid-column-span: 1;
         grid-column: 1 / span 1;  
     }
 
 
     #biography{
+        -ms-grid-row: 1;
+        -ms-grid-row-span: 1;
         grid-row: 1 / span 1;
+        -ms-grid-column: 2;
+        -ms-grid-column-span: 2;
         grid-column: 2 / span 2;
     }
 
     #box-elements{
+        -ms-grid-row: 2;
+        -ms-grid-row-span: 1;
         grid-row: 2 / span 1;
         grid-column: 1 / -1;
-        flex-direction: row;
-        flex-wrap: wrap;
+        -webkit-box-orient: horizontal;
+        -webkit-box-direction: normal;
+            -ms-flex-direction: row;
+                flex-direction: row;
+        -ms-flex-wrap: wrap;
+            flex-wrap: wrap;
     }
 
 
     #stryker, #trinity, #bdsi, #umtri{
+        -ms-grid-rows: auto auto;
         grid-template-rows: auto auto;
+        -ms-grid-columns: 1fr 1fr;
         grid-template-columns: 1fr 1fr;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+        justify-items: center;
     }
     
     .project-title{
@@ -642,29 +812,45 @@ footer{
     
     
     .proj-description{
+        -ms-grid-row: 2;
+        -ms-grid-row-span: 1;
         grid-row: 2 / span 1;
+        -ms-grid-column: 1;
+        -ms-grid-column-span: 1;
         grid-column: 1 / span 1;
     }
     
     
     .project-image{
+        -ms-grid-row: 2;
+        -ms-grid-row-span: 1;
         grid-row: 2 / span 1;
+        -ms-grid-column: 2;
+        -ms-grid-column-span: 1;
         grid-column: 2 / span 1;
     }
 
     #hobbies{
+        -ms-grid-rows: 1fr;
         grid-template-rows: 1fr;
+        -ms-grid-columns: 0.5fr 1fr;
         grid-template-columns: 0.5fr 1fr;
     }
 
     #hobbies-desc{
+        -ms-grid-column: 2;
+        -ms-grid-column-span: 1;
         grid-column: 2 / span 1;
         border: 5px solid #6b6b6b;
         padding: 5px;
     }
 
     #half-marathon{
+        -ms-grid-row: 1;
+        -ms-grid-row-span: 1;
         grid-row: 1 / span 1;
+        -ms-grid-column: 1;
+        -ms-grid-column-span: 1;
         grid-column: 1 / span 1;
     }
 }
@@ -672,13 +858,19 @@ footer{
 @media screen and (min-width: 1024px){
 
     header{
-        flex-direction: row;
-        justify-content: space-between;
+        -webkit-box-orient: horizontal;
+        -webkit-box-direction: normal;
+            -ms-flex-direction: row;
+                flex-direction: row;
+        -webkit-box-pack: justify;
+            -ms-flex-pack: justify;
+                justify-content: space-between;
     }
 
-
     .projects{
+        -ms-grid-rows: 1fr 1fr;
         grid-template-rows: 1fr 1fr;
+        -ms-grid-columns: 1fr 1fr;
         grid-template-columns: 1fr 1fr;
     }
 
@@ -688,107 +880,129 @@ footer{
     }
 
     #stryker, #trinity{
+        -ms-grid-row: 1;
+        -ms-grid-row-span: 1;
         grid-row: 1 / span 1;
     }
 
     #stryker{
+        -ms-grid-column: 1;
+        -ms-grid-column-span: 1;
         grid-column: 1 / span 1;
     }
 
     #trinity{
+        -ms-grid-column: 2;
+        -ms-grid-column-span: 1;
         grid-column: 2 / span 1;
     }
 
     #bdsi, #umtri{
+        -ms-grid-row: 2;
+        -ms-grid-row-span: 1;
         grid-row: 2 / span 1;
     }
 
     #bdsi{
+        -ms-grid-column: 1;
+        -ms-grid-column-span: 1;
         grid-column: 1 / span 1;
     }
 
     #umtri{
+        -ms-grid-column: 2;
+        -ms-grid-column-span: 1;
         grid-column: 2 / span 1;
     }
 
     #stryker, #trinity, #bdsi, #umtri{
+        -ms-grid-rows: auto auto auto;
         grid-template-rows: auto auto auto;
+        -ms-grid-columns: 1fr;
         grid-template-columns: 1fr;
     }
 
-    
     .project-title{
+        -ms-grid-row: 1;
+        -ms-grid-row-span: 1;
         grid-row: 1 / span 1;
         grid-column: 1 / -1;
     }
     
-    
     .proj-description{
+        -ms-grid-row: 2;
+        -ms-grid-row-span: 1;
         grid-row: 2 / span 1;
         grid-column: 1 / -1;
     }
     
-    
     .project-image{
+        -ms-grid-row: 3;
+        -ms-grid-row-span: 1;
         grid-row: 3 / span 1;
         grid-column: 1 / -1;
     }
     
     .courses{
+        -ms-grid-rows: 0.25fr 1fr 1fr;
         grid-template-rows: 0.25fr 1fr 1fr;
+        -ms-grid-columns: 1fr 1fr;
         grid-template-columns: 1fr 1fr;
     }
-
+    
     #si618, #lhs712{
+        -ms-grid-row: 2;
+        -ms-grid-row-span: 1;
         grid-row: 2 / span 1;
     }
 
     #si507, #si539 {
+        -ms-grid-row: 3;
+        -ms-grid-row-span: 1;
         grid-row: 3 / span 1;
     }
 
     #si618, #si507{
+        -ms-grid-column: 1;
+        -ms-grid-column-span: 1;
         grid-column: 1 / span 1;
     }
 
     #lhs712, #si539{
+        -ms-grid-column: 2;
+        -ms-grid-column-span: 1;
         grid-column: 2 / span 1;
     }
 
-    
 }
  
 @media screen and (prefers-reduced-motion: reduce){
 
     header h1{
-        animation: none;
+        -webkit-animation: none;
+                animation: none;
     }
   
     .skip a, #headshots{
+      -webkit-transition: none;
+      -o-transition: none;
       transition: none;
     }
 
     .content__container__list{
-        animation: none;
+        -webkit-animation: none;
+                animation: none;
         overflow: visible;
         list-style-type: disc;
         padding-left: 75px;
-        
     }
-
+    
     .content {
         height: 200px;
-    
     }
-
-    
     
     .content__container {
         overflow: visible; 
-        height: 40px;
-        padding: 0 40px;
-    }
-    
- 
+    }  
 
 }
